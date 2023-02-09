@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akstonydemo-2a3d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akstonydemo-2a3d"
+  template:
+    metadata:
+      labels:
+        app: "akstonydemo-2a3d"
+    spec:
+      containers:
+        - name: "akstonydemo-2a3d"
+          image: "arctonydemo.azurecr.io/akstonydemo"
+          ports:
+          - containerPort: 80
